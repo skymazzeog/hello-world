@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "gmdemo-052a"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "gmdemo-052a"
+  template:
+    metadata:
+      labels:
+        app: "gmdemo-052a"
+    spec:
+      containers:
+        - name: "gmdemo-052a"
+          image: "gmdemo.azurecr.io/gmdemo"
+          ports:
+          - containerPort: 80
